@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Routes} from "react-router-dom";
 import SignIn from "./components/signIn";
 import PricingContent from './components/pricing';
+import Reservations from './components/reservations';
+import Availability from './components/availibility';
 
 function App() {
   let authorization = true;
@@ -13,6 +15,14 @@ function App() {
         <Route
           path="/home"
           element={<PricingContent authorized={authorization} />}
+        />
+        <Route
+          path="/reservations"
+          element={<Reservations authorized={authorization} />}
+        />
+        <Route
+          path="/availability"
+          element={<Availability authorized={authorization} />}
         />
       </Routes>
     </div>

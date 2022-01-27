@@ -3,8 +3,11 @@ import AppBar from "@mui/material/AppBar";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
+
 
 export default function TopBar() {
+  const navigate = useNavigate();
   return (
     <AppBar
       position="static"
@@ -22,16 +25,22 @@ export default function TopBar() {
             color="text.primary"
             href="#"
             sx={{ my: 1, mx: 1.5 }}
+            onClick={() => {
+              navigate("/availability");
+            }}
           >
-            Reservations
+            Availability
           </Link>
           <Link
             variant="button"
             color="text.primary"
             href="#"
             sx={{ my: 1, mx: 1.5 }}
+            onClick={() => {
+              navigate("/reservations");
+            }}
           >
-            Availibility
+            Reservations
           </Link>
         </nav>
         <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
