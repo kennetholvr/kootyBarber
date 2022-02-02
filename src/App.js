@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { Route, Routes} from "react-router-dom";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import SignIn from "./components/signIn";
 import PricingContent from './components/pricing';
 import Reservations from './components/reservations';
@@ -10,6 +11,7 @@ function App() {
   let authorization = true;
   return (
     <div className="App">
+      <AmplifySignOut />
       <Routes className="appContainer">
         <Route path="/" element={<SignIn />} />
         <Route
@@ -29,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
